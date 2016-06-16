@@ -15,6 +15,7 @@ namespace WebDeveloper.DataAccess
         //base de datos local
         public WebContextDb() : base("name=WebDeveloperConnectionString")
         {
+            Database.SetInitializer(new WebDeveloperInitializer());
         }       
         //Le indicamos la tabla a la cual se va a relacionar,
         //El dbset te esta indicando que todo lo que venga con la llamada clients la va mapear

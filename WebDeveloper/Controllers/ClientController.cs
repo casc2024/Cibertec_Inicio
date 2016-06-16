@@ -58,15 +58,18 @@ namespace WebDeveloper.Controllers
         public ActionResult Delete(int id)
         {
             //return View(_client.GetList().Where(x => x.Id == id).FirstOrDefault());
-            return View(_client.GetClientById(id));
+            var client = _client.GetClientById(id);
+            if (client == null) return RedirectToAction("Index");
+            return View(client);
         }
 
         [HttpPost]
         public ActionResult Delete(Client client)
         {
             //_client.Delete(_client.GetList().Where(x => x.Id == client.Id).FirstOrDefault());
-            _client.Delete(_client.GetClientById(client.Id));
-            return RedirectToAction("Index", "Client");
+            if (_client.Delete(_client.GetClientById(client.Id)) > 0)
+                return RedirectToAction("Index", "Client");
+            return View(client);
         }
     }
 }

@@ -36,6 +36,5 @@ namespace WebDeveloper.DataAccess
                 return dbContext.Clients.FirstOrDefault(x => x.Id == id);
             }
         }
-        
     }
 }
