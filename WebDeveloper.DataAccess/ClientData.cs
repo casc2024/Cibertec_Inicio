@@ -32,7 +32,9 @@ namespace WebDeveloper.DataAccess
         //}
         
         public Client GetClientById(int id) {
-            return GetList().Where(x => x.Id == id).FirstOrDefault();
+            using (var dbContext = new WebContextDb()) {
+                return dbContext.Clients.FirstOrDefault(x => x.Id == id);
+            }
         }
         
     }
