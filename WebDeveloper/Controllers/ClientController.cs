@@ -40,7 +40,8 @@ namespace WebDeveloper.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View(_client.GetList().Where(x => x.Id == id).SingleOrDefault());
+            //return View(_client.GetList().Where(x => x.Id == id).FirstOrDefault());
+            return View(_client.GetClientById(id));
         }
 
         [HttpPost]
@@ -56,13 +57,15 @@ namespace WebDeveloper.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View(_client.GetList().Where(x => x.Id == id).SingleOrDefault());
+            //return View(_client.GetList().Where(x => x.Id == id).FirstOrDefault());
+            return View(_client.GetClientById(id));
         }
 
         [HttpPost]
         public ActionResult Delete(Client client)
         {
-            _client.Delete(_client.GetList().Where(x => x.Id == client.Id).SingleOrDefault());
+            //_client.Delete(_client.GetList().Where(x => x.Id == client.Id).FirstOrDefault());
+            _client.Delete(_client.GetClientById(client.Id));
             return RedirectToAction("Index", "Client");
         }
     }

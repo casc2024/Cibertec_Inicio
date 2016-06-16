@@ -31,5 +31,9 @@ namespace WebDeveloper.DataAccess
         //    }
         //}
         
+        public Client GetClientById(int id) {
+            return GetList().Where(x => x.Id == id).FirstOrDefault();
+        }
+        
     }
 }
