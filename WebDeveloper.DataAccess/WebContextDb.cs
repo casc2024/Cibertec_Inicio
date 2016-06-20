@@ -21,6 +21,9 @@ namespace WebDeveloper.DataAccess
         //El dbset te esta indicando que todo lo que venga con la llamada clients la va mapear
         //como aplicamos code first tendra este nombre clients asi q no tenemos problemas
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Employees> Employees { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<Order_Details> Order_Details { get; set; }
         //Con esto deshabilitamos que se modifique el nombre de las tablas ejemplo:
         //Alumno => Alumnoes
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
