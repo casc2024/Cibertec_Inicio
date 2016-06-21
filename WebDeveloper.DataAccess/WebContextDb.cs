@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 using WebDeveloper.Model;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
+/*
+Para hacer data migrations se configurar el administrador de paquetes con el siguiente comando
+enable-migrations -- > Habilitaion de la migración
+Como hacer migracion, se hacen desde la consola administrativa
+Add-Migration "First Change of dbo.Client"
+para actulizar con el siguiente comando Update-Database
+*/
 namespace WebDeveloper.DataAccess
 {
     public class WebContextDb : DbContext //Contexto de datos
@@ -15,7 +22,7 @@ namespace WebDeveloper.DataAccess
         //base de datos local
         public WebContextDb() : base("name=WebDeveloperConnectionString")
         {
-            Database.SetInitializer(new WebDeveloperInitializer());
+            //Database.SetInitializer(new WebDeveloperInitializer());
         }       
         //Le indicamos la tabla a la cual se va a relacionar,
         //El dbset te esta indicando que todo lo que venga con la llamada clients la va mapear

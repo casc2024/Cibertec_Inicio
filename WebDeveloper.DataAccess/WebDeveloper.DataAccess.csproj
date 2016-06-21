@@ -53,6 +53,15 @@
     <Compile Include="ClientData.cs" />
     <Compile Include="EmployeesData.cs" />
     <Compile Include="IDataAccess.cs" />
+    <Compile Include="Migrations\201606210037349_InitialCreate.cs" />
+    <Compile Include="Migrations\201606210037349_InitialCreate.Designer.cs">
+      <DependentUpon>201606210037349_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606210101005_First Change of dbo.Client.cs" />
+    <Compile Include="Migrations\201606210101005_First Change of dbo.Client.Designer.cs">
+      <DependentUpon>201606210101005_First Change of dbo.Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OrderData.cs" />
     <Compile Include="Order_DetailsData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +77,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606210037349_InitialCreate.resx">
+      <DependentUpon>201606210037349_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606210101005_First Change of dbo.Client.resx">
+      <DependentUpon>201606210101005_First Change of dbo.Client.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

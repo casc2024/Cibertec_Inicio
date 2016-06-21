@@ -15,8 +15,9 @@ namespace WebDeveloper.Model
         [Required(ErrorMessage = "The First Name is required.")]
         public string FirstName { get; set; }
 
+        [DataType(DataType.DateTime)]
         [Display(Name = "Birth Date")]
-        [DisplayFormat(DataFormatString = "{0: dd/MM/yyyy}", ApplyFormatInEditMode =true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? BirthDate { get; set; }
 
         [Display(Name = "Address")]
