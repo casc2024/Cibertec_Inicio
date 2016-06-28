@@ -13,12 +13,23 @@ namespace WebDeveloper
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //Ruteo personalizado
-            routes.MapRoute(
-                name: "Razor",
-                url: "Razor/{id}",
-                defaults: new { controller = "Razor", action = "Product", id = UrlParameter.Optional }
-            );
+            //routes.MapRoute(
+            //    name: "RazorId",
+            //    url: "Razor/{id}",
+            //    defaults: new { controller = "Razor", action = "EntryId", id = UrlParameter.Optional }
+            //);
+
+            ////Ruteo personalizado
+            ////Ruteo personalizado para usar una fecha como parametros de preferencia separar po guiones
+            ////Razor/2016/12/12
+            ////Razor/256/12/2016
+            //routes.MapRoute(
+            //    name: "RazorDate",
+            //    url: "Razor/{date}",
+            //    defaults: new { controller = "Razor", action = "EntryDate", id = UrlParameter.Optional }
+            //);
+
+            routes.MapMvcAttributeRoutes(); //para trabjar con los enrrutamientos definidos en el controlador
 
             routes.MapRoute(
                 name: "Default",
