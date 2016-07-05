@@ -10,10 +10,21 @@ namespace WebDeveloper.Controllers
 {
     public class ClientController : Controller
     {
-        private ClientData _client = new ClientData();
+        //private ClientData _client = new ClientData();
         // GET: Client
+        //Para la inyeccion de dependecias es importante que la clase tenga un constructor
+        //definimos el constructor
+        //private IDataAccess<Client> _client;
+        private ClientData _client;
+        //public ClientController(IDataAccess<Client> client) {
+        public ClientController(ClientData client)
+        {
+            _client = client;
+        }
+
         public ActionResult Index()
         {
+            ViewBag.Title = Resources.Resource.Client_Title;
             //Sugerencia para la referencia Ctrl + .
             //Ordenar el código Ctrl + K + D
             var client = new ClientData();

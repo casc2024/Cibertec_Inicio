@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using WebDeveloper.Resources;
 
 namespace WebDeveloper.Model
 {
@@ -6,11 +7,11 @@ namespace WebDeveloper.Model
     {
         public int Id { get; set; }
         
-        [Display(Name = "First Name")]
-        [Required (ErrorMessage = "This field is required")]
+        [Display(Name = "Client_Name", ResourceType = typeof(Resource))]
+        [Required (ErrorMessage = "This field is required")]       
         public string Name { get; set; }
 
-        [Display(Name = "Last Name")]
+        [Display(Name = "Client_LastName", ResourceType = typeof(Resource))]
         [Required (ErrorMessage = "The Last Name is required")]
         public string LastName { get; set; }
     }

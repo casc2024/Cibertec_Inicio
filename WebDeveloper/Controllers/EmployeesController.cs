@@ -10,7 +10,11 @@ namespace WebDeveloper.Controllers
 {
     public class EmployeesController : Controller
     {
-        private EmployeesData _employees = new EmployeesData();
+        //private EmployeesData _employees = new EmployeesData();
+        private EmployeesData _employees;
+        public EmployeesController(EmployeesData employees) {
+            _employees = employees;
+        }
         // GET: Employees
         public ActionResult Index()
         {
