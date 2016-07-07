@@ -2,6 +2,7 @@
 using Microsoft.Owin;
 using Owin;
 using System.Reflection;
+using System;
 using WebDeveloper.DataAccess;
 using WebDeveloper.Model;
 
@@ -12,7 +13,7 @@ namespace WebDeveloper
     {
         public void Configuration(IAppBuilder app)
         {
-            //ConfigureAuth(app);
+            ConfigureAuth(app);
             //Implementacion de la inyeccion de dependencias
             var container = new ServiceContainer(); //definimos el contenedor
             //la funcion de un contenedor en una inyeccion de dependencias es 
